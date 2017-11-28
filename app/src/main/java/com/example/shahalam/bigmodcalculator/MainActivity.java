@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
     }
     public int bigMod(int x,int n, int M)
     {
-        x=base;
-        n=power;
-        M=modular;
+       /// x=base;
+        ///n=power;
+        ///M=modular;
         if(n==0)  return 1;
         else if (n%2==0)        // if power is even
         {

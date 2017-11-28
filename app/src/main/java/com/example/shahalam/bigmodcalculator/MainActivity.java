@@ -2,9 +2,12 @@ package com.example.shahalam.bigmodcalculator;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,5 +25,31 @@ public class MainActivity extends AppCompatActivity {
         modularInput = findViewById(R.id.input_modular);
         Calculate = findViewById(R.id.ButtonID);
         displayResult = findViewById(R.id.result_TextViewID);
+
+
+        displayResult.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int result;
+                result = bigMod(base, power, modular);
+                displayResult.setText(Integer.toString(result));
+            }
+        });
+
+
+    }
+    public int bigMod(int x,int n, int M)
+    {
+        x=base;
+        n=power;
+        M=modular;
+        if(n==0)  return 1;
+        else if (n%2==0)        // if power is even
+        {
+            int y= bigMod(x,n/2,M);
+            return (y*y)%M;
+        }
+        else                // if power is odd
+            return (x%M)*bigMod(x,n-1,M);
     }
 }

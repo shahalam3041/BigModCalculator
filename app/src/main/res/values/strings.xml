@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">BigModCalculator</string>
+    <string name="input_base">Base</string>
+    <string name="input_power">Power</string>
+    <string name="input_modular">Modular</string>
+    <string name="button_text">Calculate</string>
+</resources>

@@ -32,7 +32,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 int result;
                 result = bigMod(base, power, modular);
-                displayResult.setText(Integer.toString(result));
+               displayResult.setText(Integer.toString(result)); /// to print the result
+
             }
         });
 

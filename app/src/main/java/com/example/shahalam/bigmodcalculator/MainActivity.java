@@ -31,19 +31,18 @@ public class MainActivity extends AppCompatActivity {
         Calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String baseString = baseInput.getText().toString();
+                final int base = Integer.parseInt(baseString);
 
-                 String baseString = baseInput.getText().toString();
-        final int base = Integer.parseInt(baseString);
+                String powerString = powerInput.getText().toString();
+                final int power = Integer.parseInt(powerString);
 
-        String powerString = powerInput.getText().toString();
-        final int power = Integer.parseInt(powerString);
-
-        String modularString = modularInput.getText().toString();
-        final int modular = Integer.parseInt(modularString);
+                String modularString = modularInput.getText().toString();
+                final int modular = Integer.parseInt(modularString);
 
                 int result;
-               result = bigMod(base, power, modular);
-              displayResult.setText("Result = "+result);
+                result = bigMod(base, power, modular);
+                displayResult.setText("Result = "+result);
             }
         });
     }

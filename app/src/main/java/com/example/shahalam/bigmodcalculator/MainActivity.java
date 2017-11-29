@@ -26,21 +26,19 @@ public class MainActivity extends AppCompatActivity {
         Calculate = findViewById(R.id.ButtonID);
         displayResult = findViewById(R.id.result_TextViewID);
 
-
         Calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int result;
-                result = bigMod(base, power, modular);
-               displayResult.setText(Integer.toString(result)); /// to print the result
-
+               result = bigMod(base, power, modular);
+              displayResult.setText("Result = "+result);
             }
         });
     }
     int bigMod(int base, int power, int modular)
     {
         if(power==0) return 1;
-        else if(power%2==0)
+        else if(power%2==0)         ///
         {
             int temp = bigMod(base, power/2, modular);
             return ((temp%modular)*(temp%modular))%modular;

@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         displayResult = findViewById(R.id.result_TextViewID);
 
 
-        displayResult.setOnClickListener(new View.OnClickListener() {
+        Calculate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int result;
@@ -36,21 +36,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
-    public int bigMod(int x,int n, int M)
+    int bigMod(int base, int power, int modular)
     {
-       /// x=base;
-        ///n=power;
-        ///M=modular;
-        if(n==0)  return 1;
-        else if (n%2==0)        // if power is even
+        if(power==0) return 1;
+        else if(power%2==0)
         {
-            int y= bigMod(x,n/2,M);
-            return (y*y)%M;
+            int temp = bigMod(base, power/2, modular);
+            return ((temp%modular)*(temp%modular))%modular;
         }
-        else                // if power is odd
-            return (x%M)*bigMod(x,n-1,M);
+        else
+            return ((base%modular)*bigMod(base, power-1, modular))%modular;
     }
 }
